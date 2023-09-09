@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="notificationServiceBean" class="com.example.demo.tarea1.notification.NotificationServiceImpl">
+        <constructor-arg>
+            <ref bean="facebookServiceBean" />
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="emailServiceBean" />
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="twitterServiceBean" />
+        </constructor-arg>
+       </bean>
+
+       <bean id="facebookServiceBean" class="com.example.demo.tarea1.message.FacebookMessageServiceImpl"></bean>
+       <bean id="emailServiceBean" class="com.example.demo.tarea1.message.EmailMessageServiceImpl"></bean>
+       <bean id="twitterServiceBean" class="com.example.demo.tarea1.message.TwitterMessageServiceImpl"></bean>
+
+</beans>
