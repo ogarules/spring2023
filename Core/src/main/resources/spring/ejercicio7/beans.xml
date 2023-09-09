@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="wheelBean" class="com.example.demo.ejercicio7.Wheel" scope="prototype">
+            <property name="brand" value="Goodyear"></property>
+            <property name="material" value="Rubber"></property>
+            <property name="rinSize" value="17"></property>
+       </bean>
+
+       <bean id="engineBean" class="com.example.demo.ejercicio7.Engine">
+            <property name="serial" value="1234"></property>
+            <property name="cylinderNumber" value="4"></property>
+            <property name="hp" value="210"></property>
+       </bean>
+
+       <bean id="carBean" class="com.example.demo.ejercicio7.Car"
+            lazy-init="true">
+            <property name="engine" ref="engineBean"></property>
+            <property name="wheel1" ref="wheelBean"></property>
+            <property name="wheel2" ref="wheelBean"></property>
+            <property name="wheel3" ref="wheelBean"></property>
+            <property name="wheel4" ref="wheelBean"></property>
+       </bean>
+</beans>
