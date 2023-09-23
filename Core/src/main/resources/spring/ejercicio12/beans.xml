@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="person1" class="com.example.demo.ejercicio12.Person">
+            <property name="name">
+                  <bean class="java.lang.String">
+                        <constructor-arg value="OGA"></constructor-arg>
+                  </bean>
+            </property>
+            <property name="age" value="100"></property>
+       </bean>
+
+       <bean id="juanPhone" class="com.example.demo.ejercicio12.Phone">
+            <property name="number" value="123"></property>
+       </bean>
+
+       <bean id="karlaPhone" class="com.example.demo.ejercicio12.Phone">
+            <property name="number" value="345"></property>
+       </bean>
+
+       <bean id="lauraDireccion" class="com.example.demo.ejercicio12.Address">
+            <property name="street" value="calle 1"></property>
+            <property name="internalNumber" value="23"></property>
+            <property name="externalNumber" value="56"></property>
+            <property name="neighbor">
+                  <bean class="java.lang.String">
+                        <constructor-arg value="la que me cae bien"></constructor-arg>
+                  </bean>
+            </property>
+       </bean>
+
+       <bean id="ogaStret" class="java.lang.String">
+            <constructor-arg value="calle oga"></constructor-arg>
+       </bean>
+       
+       <bean id="numeroBean" class="java.lang.Integer">
+            <constructor-arg value="100"></constructor-arg>
+       </bean>
+
+       <bean id="addressBookBean" class="com.example.demo.ejercicio12.AddressBook">
+            <property name="addresses">
+                  <list>
+                        <ref bean="lauraDireccion" />
+                        <bean class="com.example.demo.ejercicio12.Address">
+                              <property name="street" value="calle 2"></property>
+                              <property name="internalNumber" value="33"></property>
+                              <property name="externalNumber" value="67"></property>
+                              <property name="neighbor">
+                                    <bean class="java.lang.String">
+                                          <constructor-arg value="el que lava la banqueta"></constructor-arg>
+                                    </bean>
+                              </property>
+                        </bean>
+                  </list>
+            </property>
+            <property name="phones">
+                  <set>
+                        <ref bean="juanPhone" />
+                        <ref bean="karlaPhone" />
+                        <bean class="com.example.demo.ejercicio12.Phone">
+                              <property name="number" value="666"></property>
+                         </bean>
+                  </set>
+            </property>
+            <property name="emergencyNumbers">
+                  <map>
+                        <entry key="1" value="Policioa: 040"></entry>
+                        <entry key="2" value="Emergencias: 911"></entry>
+                  </map>
+            </property>
+            <property name="family">
+                  <props>
+                        <prop key="papa">Julio regalado</prop>
+                        <prop key="mama">Paquita la del barrio</prop>
+                  </props>
+            </property>
+            <property name="numbers">
+                  <array>
+                        <ref bean="numeroBean" />
+                  </array>
+            </property>
+            <property name="notes">
+                  <array>
+                        <value>nota 1</value>
+                        <ref bean="ogaStret" />
+                  </array>
+            </property>
+            <property name="persons">
+                  <array>
+                        <ref bean="person1" />
+                  </array>
+            </property>
+       </bean>
+</beans>
