@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="connectionBeanParent" class="com.example.demo.ejercicio9.DatabaseConnection"
+             init-method="connect" destroy-method="disconnect">
+             <property name="database" value="localhost"></property>
+             <property name="user" value="oga"></property>
+             <property name="password" value="123"></property>
+       </bean>
+
+       <bean id="connectionChildBean" class="com.example.demo.ejercicio9.DatabaseConnection"
+             parent="connectionBeanParent">
+             <property name="database" value="UATdb"></property>
+             <property name="debugMode" value="true"></property>
+
+       </bean>
+       
+</beans>
