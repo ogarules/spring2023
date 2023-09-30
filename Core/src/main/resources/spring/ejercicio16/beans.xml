@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+       <context:annotation-config/>
+
+       <bean class="com.example.demo.ejercicio16.Student"></bean>
+
+       <bean id="name" class="java.lang.String">
+              <constructor-arg>
+                     <value>OGA</value>
+              </constructor-arg>
+       </bean>
+
+       <bean id="enrollment" class="java.lang.String">
+              <constructor-arg>
+                     <value>enrollment</value>
+              </constructor-arg>
+       </bean>
+
+       <bean id="math" class="com.example.demo.ejercicio16.Subject"
+             p:name="math subject" p:credits="1"></bean>
+       
+       <bean id="subject" class="com.example.demo.ejercicio16.Subject"
+             p:name="other subject" p:credits="100"></bean>
+     
+</beans>
