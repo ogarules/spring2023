@@ -11,6 +11,9 @@ public class NumericalConverter {
     private Numerical numerical;
     private Currency currrency;
 
+    public NumericalConverter(Numerical numerical) {
+        this.numerical = numerical;
+    }
 
     public String convert(String number, boolean capitalLetters) {
         String literal = "";
