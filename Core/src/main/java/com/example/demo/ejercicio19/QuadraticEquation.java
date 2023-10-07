@@ -17,10 +17,10 @@ public class QuadraticEquation {
     private double c;
 
     @Autowired
-    private IQuadraticEquationService quadraticService;
+    private IQuadraticEquationService quadraticEquationService;
 
     public QuadraticEquationResult solve() {
-        return quadraticService.solve(a, b, c);
+        return quadraticEquationService.solve(a, b, c);
     }
 
     public void setValue(double value, QuadraticEquationValue type) {
