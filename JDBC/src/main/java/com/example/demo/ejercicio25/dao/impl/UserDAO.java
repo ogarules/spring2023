@@ -59,7 +59,7 @@ public class UserDAO extends GenericSpringJdbcDAO<User, Long> implements IUserDA
         this.jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-                PreparedStatement ps = con.prepareStatement(INSERT_CUSTOMER, new String[]{ "USER_ID"});
+                PreparedStatement ps = con.prepareStatement(INSERT_USER, new String[]{ "USER_ID"});
 
                 ps.setLong(1, entity.getCustomer().getId());
                 ps.setString(2, entity.getUserName());
