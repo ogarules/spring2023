@@ -30,6 +30,7 @@ public class PersonRestController {
             p.setId(i + 1);
             p.setName("OGA " + (i+1));
             p.setAge(100+i + 1);
+            
             persons.add(p);
         }
     }
