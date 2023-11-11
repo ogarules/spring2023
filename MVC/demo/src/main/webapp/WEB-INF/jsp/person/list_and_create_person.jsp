@@ -6,6 +6,11 @@
 <html>
     <head>Hola spring form</head>
     <body>
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
         <h1>Persons</h1>
         <h2>Register</h2>
 
@@ -17,12 +22,14 @@
                     <td>Nombre:</td>
                     <td>
                         <form:input path="name"/>
+                        <form:errors path="name" cssClass="error"/>
                     </td>
                 </tr>
                 <tr>
                     <td>Edad:</td>
                     <td>
                         <form:input path="age"/>
+                        <form:errors path="age" cssClass="error"/>
                     </td>
                 </tr>
                 <tr>
